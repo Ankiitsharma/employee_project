@@ -82,7 +82,7 @@ def register(request):
         name= request.POST.get('name')
         password= request.POST.get('password')
 
-        if User.objects.filter(username=username).exists():
+        if User.objects.filter(username= username).exists():
             messages.success(request, 'USER ALREADY EXISTS.')
             return render(request, 'employee_app/register.html' )
         user_obj= User.objects.create( username=username, first_name=name)
